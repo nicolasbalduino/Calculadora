@@ -1,16 +1,49 @@
-﻿float n1, n2;
+﻿double num1, num2;
+int opcao = 0;
 
-Console.WriteLine("Dgite o primeiro numero: ");
-n1 = float.Parse(Console.ReadLine());
+void Menu()
+{
+    Console.Clear();
+    Console.WriteLine("1 - Somar");
+    Console.WriteLine("2 - Subtrair");
+    Console.WriteLine("3 - Multiplicar");
+    Console.WriteLine("4 - Dividir");
+    Console.WriteLine("5 - Sair");
+    Console.WriteLine("Escolha uma opção: ");
 
-Console.WriteLine("Dgite o primeiro numero: ");
-n2 = float.Parse(Console.ReadLine());
+    opcao = int.Parse(Console.ReadLine());
 
-Console.WriteLine("A soma é igual a " + (n1 + n2));
-Console.WriteLine("A subtracao é igual a " + (n1 - n2));
-Console.WriteLine("A multiplicacao é igual a " + (n1 * n2));
+    switch (opcao)
+    {
+        default:
+            Console.WriteLine("Opção inválida!");
+            Console.ReadLine();
+            break;
+        case 1: Console.WriteLine("A soma dos numeros é: " + (num1 + num2));
+            Console.ReadLine();
+            break;
+        case 2: Console.WriteLine("A subtração dos numeros é: " + (num1 - num2));
+            Console.ReadLine();
+            break;
+        case 3: Console.WriteLine("O produto dos numeros é: " + (num1 * num2));
+            Console.ReadLine();
+            break;
+        case 4: Console.WriteLine("A divisão dos numeros é: " + (num1 / num2));
+            Console.ReadLine();
+            break;
+        case 5: Console.WriteLine("Até logo!");
+            Console.ReadLine();
+            break;
+    }
+}
 
-if (n2 == 0)
-    Console.WriteLine("Impossivel dividir por ZERO!");
-else
-    Console.WriteLine("A dvisao é igual a " + (n1 / n2));
+Console.WriteLine("Informe o primeiro numero: ");
+num1 = double.Parse(Console.ReadLine());
+
+Console.WriteLine("Informe o segundo numero: ");
+num2 = double.Parse(Console.ReadLine());
+
+while (opcao != 5)
+{
+    Menu();
+}
