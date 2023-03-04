@@ -12,29 +12,29 @@ void Menu()
     Console.WriteLine("Escolha uma opção: ");
 
     opcao = int.Parse(Console.ReadLine());
+}
 
-    switch (opcao)
-    {
-        default:
-            Console.WriteLine("Opção inválida!");
-            Console.ReadLine();
-            break;
-        case 1: Console.WriteLine("A soma dos numeros é: " + (num1 + num2));
-            Console.ReadLine();
-            break;
-        case 2: Console.WriteLine("A subtração dos numeros é: " + (num1 - num2));
-            Console.ReadLine();
-            break;
-        case 3: Console.WriteLine("O produto dos numeros é: " + (num1 * num2));
-            Console.ReadLine();
-            break;
-        case 4: Console.WriteLine("A divisão dos numeros é: " + (num1 / num2));
-            Console.ReadLine();
-            break;
-        case 5: Console.WriteLine("Até logo!");
-            Console.ReadLine();
-            break;
-    }
+void CalcularSoma()
+{
+    Console.WriteLine("A soma dos numeros é: " + (num1 + num2));
+}
+
+void CalcularSubtracao()
+{
+    Console.WriteLine("A subtração dos numeros é: " + (num1 - num2));
+}
+
+void CalcularMultiplicacao()
+{
+    Console.WriteLine("O produto dos numeros é: " + (num1 * num2));
+}
+
+void CalcularDivisao()
+{
+    if (num2 == 0)
+        Console.WriteLine("Não e possivel dividir um numero por 0");
+    else
+        Console.WriteLine("A divisão dos numeros é: " + (num1 / num2));
 }
 
 Console.WriteLine("Informe o primeiro numero: ");
@@ -46,4 +46,28 @@ num2 = double.Parse(Console.ReadLine());
 while (opcao != 5)
 {
     Menu();
+
+    switch (opcao)
+    {
+        default:
+            Console.WriteLine("Opção inválida!");
+            break;
+        case 1:
+            CalcularSoma();
+            break;
+        case 2:
+            CalcularSubtracao();
+            break;
+        case 3:
+            CalcularMultiplicacao();
+            break;
+        case 4:
+            CalcularDivisao();
+            break;
+        case 5:
+            Console.WriteLine("Até logo!");
+            break;
+    }
+
+    Console.ReadLine();
 }
