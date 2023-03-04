@@ -1,7 +1,7 @@
 ﻿double num1, num2;
 int opcao = 0;
 
-void Menu()
+int Menu()
 {
     Console.Clear();
     Console.WriteLine("1 - Somar");
@@ -11,7 +11,7 @@ void Menu()
     Console.WriteLine("5 - Sair");
     Console.WriteLine("Escolha uma opção: ");
 
-    opcao = int.Parse(Console.ReadLine());
+    return int.Parse(Console.ReadLine());
 }
 
 void CalcularSoma()
@@ -45,7 +45,7 @@ num2 = double.Parse(Console.ReadLine());
 
 while (opcao != 5)
 {
-    Menu();
+    opcao = Menu();
 
     switch (opcao)
     {
