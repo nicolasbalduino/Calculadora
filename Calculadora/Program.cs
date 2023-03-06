@@ -14,27 +14,27 @@ int Menu()
     return int.Parse(Console.ReadLine());
 }
 
-void CalcularSoma()
+double CalcularSoma()
 {
-    Console.WriteLine("A soma dos numeros é: " + (num1 + num2));
+    return num1 + num2;
 }
 
-void CalcularSubtracao()
+double CalcularSubtracao()
 {
-    Console.WriteLine("A subtração dos numeros é: " + (num1 - num2));
+    return num1 - num2;
 }
 
-void CalcularMultiplicacao()
+double CalcularMultiplicacao()
 {
-    Console.WriteLine("O produto dos numeros é: " + (num1 * num2));
+    return num1 * num2;
 }
 
-void CalcularDivisao()
+double CalcularDivisao()
 {
     if (num2 == 0)
-        Console.WriteLine("Não e possivel dividir um numero por 0");
+        return 0;
     else
-        Console.WriteLine("A divisão dos numeros é: " + (num1 / num2));
+        return num1 / num2;
 }
 
 Console.WriteLine("Informe o primeiro numero: ");
@@ -53,21 +53,22 @@ while (opcao != 5)
             Console.WriteLine("Opção inválida!");
             break;
         case 1:
-            CalcularSoma();
+            Console.WriteLine("A soma dos numeros é: " + CalcularSoma());
             break;
         case 2:
-            CalcularSubtracao();
+            Console.WriteLine("A subtração dos numeros é: " + CalcularSubtracao());
             break;
         case 3:
-            CalcularMultiplicacao();
+            Console.WriteLine("O produto dos numeros é: " + CalcularMultiplicacao());
             break;
         case 4:
-            CalcularDivisao();
+            Console.WriteLine("A divisão dos numeros é: " + CalcularDivisao());
             break;
         case 5:
             Console.WriteLine("Até logo!");
             break;
     }
 
+    Console.Write("Pressione uma tecla para continuar");
     Console.ReadLine();
 }
